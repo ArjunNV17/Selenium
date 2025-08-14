@@ -48,16 +48,16 @@ public class ParaBankTesting {
 		System.out.println(driver.getTitle());
 
 //		driver.findElement(By.id("FirstName")).sendKeys("Prabal");//approch no.1, it given instance result
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.firstName"))).sendKeys("Abhas");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.lastName"))).sendKeys("Mittal");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.firstName"))).sendKeys("Arjun");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.lastName"))).sendKeys("NV");
 		// approch no.2, and it is a better approch bcz it is giving stability
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.street"))).sendKeys("L-Block");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.city"))).sendKeys("Meerut");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.state"))).sendKeys("Uttar Pradesh");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.zipCode"))).sendKeys("250004");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.street"))).sendKeys("Kannapuram");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.city"))).sendKeys("Kannur");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.state"))).sendKeys("Kerala");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.address.zipCode"))).sendKeys("670301");
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.phoneNumber"))).sendKeys("1234567890");
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.ssn"))).sendKeys("123456");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.username"))).sendKeys("Abhas1");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.username"))).sendKeys("Arju1");
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("customer.password"))).sendKeys("Admin123");
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("repeatedPassword"))).sendKeys("Admin123");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='Register']"))).click();
@@ -71,7 +71,7 @@ public class ParaBankTesting {
 		System.out.println("performing Login");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		// driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("username"))).sendKeys("Abhas1");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("username"))).sendKeys("Arju1");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Admin123");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='Log In']"))).click();
 	}
@@ -85,8 +85,8 @@ public class ParaBankTesting {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='contact.htm']"))).click();
 		System.out.println("Opening CustomerCare");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("name"))).sendKeys("Abhas");
-		wait.until(ExpectedConditions.elementToBeClickable(By.name("email"))).sendKeys("Abhasmittal1@gmail.com");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("name"))).sendKeys("Arjun");
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("email"))).sendKeys("arjunnv1@gmail.com");
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("phone"))).sendKeys("1234567890");
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("message"))).sendKeys("Hello");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='Send to Customer Care']"))).click();
@@ -96,6 +96,7 @@ public class ParaBankTesting {
 	public void afterClass() throws InterruptedException {
 		System.out.println("Closing the browser after done");
 		if (driver != null) {
+			Thread.sleep(10000); 
 			driver.quit();
 		}
 	}
